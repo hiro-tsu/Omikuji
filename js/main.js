@@ -4,11 +4,26 @@
     const btn = document.getElementById('btn');
     
     btn.addEventListener('click', () => {
-        const results = ['大吉', '中吉', '凶', '小吉'];
-        const n = Math.floor(Math.random() * results.length);
+        // const results = ['大吉', '中吉', '凶', '小吉'];
+        // const n = Math.floor(Math.random() * results.length);
+        const n = Math.random();
         btn.textContent = n;
 
-        btn.textContent = results[n];
+        /*if分で確立変動バージョン*/
+        if( n < 0.1) {
+            btn.textContent = '大吉';
+        } else if( n < 0.3 ) {
+            btn.textContent = '中吉';
+        } else if( n < 0.7 ) {
+            btn.textContent = '吉';
+        } else if( n < 0.9 ) {
+            btn.textContent = '^_^';
+        } else {
+            btn.textContent = '凶';
+        }
+
+
+        // btn.textContent = results[n];
         
         /*switch構文版*/
         // switch(n) {
